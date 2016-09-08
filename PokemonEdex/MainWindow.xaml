@@ -1,0 +1,181 @@
+﻿<Window x:Class="PokemonEdex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokemonEdex"
+        mc:Ignorable="d"
+        Title="PokemonEdex" Height="350" Width="600" Loaded="Load"
+        
+        >
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top"  IsMainMenu="True" Padding="0,0,0,3" Background="White" BorderThickness="0,0,0,1" BorderBrush="Gray">
+                <MenuItem Header="File">
+                    <MenuItem Header="Open" Click="MenuItem_Click">
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="About">
+                    <TextBlock>
+                        Pokemon
+                    </TextBlock>
+                </MenuItem>
+            </Menu>
+            <ListBox SelectionChanged="list_SelectionChanged" x:Name ="list" DockPanel.Dock="Left" ScrollViewer.CanContentScroll="True" Margin="5,5,5,5" Width="150">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <TextBox Background="Transparent" BorderThickness="0" Text="{Binding Path=Name}" IsReadOnly="True">
+                            </TextBox>
+                        </DockPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Grid x:Name="ShowPanel" DockPanel.Dock="Left" Margin="5,5,5,5" ScrollViewer.CanContentScroll="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="0,0,0,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" BorderBrush="Black" BorderThickness="1" Margin="1,1,3,1">
+                        <Image x:Name="img" Grid.Row="0" Grid.RowSpan="7" Grid.Column="0" Grid.ColumnSpan="1" Stretch="UniformToFill" >
+                        </Image>
+                    </Border>
+                    <Grid Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1"  Background="Plum">
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="25,1,0,1">
+                                <TextBox Background="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" IsReadOnly="True">HP</TextBox>
+                            </Border>
+                            <TextBlock HorizontalAlignment="Center" FontSize="15">:</TextBlock>
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,25,1">
+                                <TextBox x:Name="Hp" Background="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Background="Bisque">
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="25,1,0,1">
+                                <TextBox Background="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" IsReadOnly="True">Attack</TextBox>
+                            </Border>
+                            <TextBlock HorizontalAlignment="Center" FontSize="15">:</TextBlock>
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,25,1">
+                                <TextBox x:Name="Attack" Background="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Row="2" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Background="OrangeRed">
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="25,1,0,1">
+                                <TextBox Background="{x:Null}" BorderThickness="0" >Defense</TextBox>
+                            </Border>
+                            <TextBlock HorizontalAlignment="Center" FontSize="15">:</TextBlock>
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,25,1">
+                                <TextBox x:Name="Defense" Background="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"  Background="YellowGreen">
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="25,1,0,1">
+                                <TextBox Background="{x:Null}" BorderThickness="0" FontSize="10" IsReadOnly="True">SpAttack</TextBox>
+                            </Border>
+                            <TextBlock HorizontalAlignment="Center" FontSize="15">:</TextBlock>
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,25,1">
+                                <TextBox x:Name="Spattack" Background="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Row="4" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Background="PaleGoldenrod">
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="25,1,0,1">
+                                <TextBox Background="{x:Null}" BorderThickness="0" FontSize="9" IsReadOnly="True">SpDefense</TextBox>
+                            </Border>
+                            <TextBlock HorizontalAlignment="Center" FontSize="15">:</TextBlock>
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,25,1">
+                                <TextBox x:Name="Spdefense" Background="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Row="5" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"  Background="Aqua">
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="25,1,0,1">
+                                <TextBox Background="{x:Null}" BorderThickness="0" IsReadOnly="True">Speed</TextBox>
+                            </Border>
+                            <TextBlock HorizontalAlignment="Center" FontSize="15">:</TextBlock>
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,25,1">
+                                <TextBox x:Name="Speed" Background="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Row="6" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"  Background="LightCoral">
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="25,1,0,1">
+                                <TextBox Background="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" IsReadOnly="True">Sum</TextBox>
+                            </Border>
+                            <TextBlock HorizontalAlignment="Center" FontSize="15">:</TextBlock>
+                            <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,25,1">
+                                <TextBox x:Name="Sum" Background="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Grid.RowSpan="1"  Background="LightCoral">
+                        <Border CornerRadius="5" Width="100" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="45,1,0,1">
+                            <TextBox Background="{x:Null}" BorderThickness="0" FontSize="10" HorizontalAlignment="Center" IsReadOnly="True">ID</TextBox>
+                        </Border>
+                        <Border CornerRadius="5" Width="100" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,45,1">
+                            <TextBox x:Name="Id" Background="{x:Null}" BorderThickness="0"  HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                        </Border>
+                        
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.RowSpan="1"  Background="MediumAquamarine">
+                        <Border CornerRadius="5" Width="100" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="45,1,0,1">
+                            <TextBox Background="{x:Null}" BorderThickness="0" FontSize="10" HorizontalAlignment="Center" IsReadOnly="True">Name</TextBox>
+                        </Border>
+                        <Border CornerRadius="5" Width="100" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,45,1">
+                            <TextBox x:Name="Name" Background="{x:Null}" BorderThickness="0"  HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                        </Border>
+
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.RowSpan="1"  Background="Khaki">
+                        <Border CornerRadius="5" Width="100" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="45,1,0,1">
+                            <TextBox Background="{x:Null}" BorderThickness="0" FontSize="10" HorizontalAlignment="Center" IsReadOnly="True">Attribute</TextBox>
+                        </Border>
+                        <Border CornerRadius="5" Width="100" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,45,1">
+                            <TextBox x:Name="Attr" Background="{x:Null}" BorderThickness="0"  HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                        </Border>
+
+                    </Grid>
+
+                </Grid>
+
+
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

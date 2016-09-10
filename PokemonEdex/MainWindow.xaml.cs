@@ -54,7 +54,6 @@ namespace PokemonEdex
             Microsoft.Win32.OpenFileDialog filedialog = new Microsoft.Win32.OpenFileDialog();
             filedialog.Filter = "Excel文件| *.xlsx;*.xls";
             filedialog.InitialDirectory = url + @"\Excel";
-            
             filedialog.ShowDialog();
             string filename = filedialog.FileName;
             if(filename != String.Empty)
@@ -81,7 +80,7 @@ namespace PokemonEdex
             this.Sum.Text = pk.Sum.ToString();
             this.Attr.Text = pk.Attr.ToString();
             this.Id.Text = pk.Id;
-            this.Name.Text = pk.Name;
+            this.PokemonName.Text = pk.Name;
         }
 
 

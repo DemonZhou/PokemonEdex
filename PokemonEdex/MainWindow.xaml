@@ -158,7 +158,7 @@
                             <TextBox Background="{x:Null}" BorderThickness="0" FontSize="10" HorizontalAlignment="Center" IsReadOnly="True">Name</TextBox>
                         </Border>
                         <Border CornerRadius="5" Width="100" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,45,1">
-                            <TextBox x:Name="Name" Background="{x:Null}" BorderThickness="0"  HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
+                            <TextBox x:Name="PokemonName" Background="{x:Null}" BorderThickness="0"  HorizontalAlignment="Center" IsReadOnly="True"></TextBox>
                         </Border>
 
                     </Grid>

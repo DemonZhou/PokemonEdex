@@ -124,4 +124,7 @@
   <data name="ultra_ball_32px_1203130_easyicon_net" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\ultra_ball_32px_1203130_easyicon.net.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="副本口袋妖怪_黑白_1_649全PM资料Excel版" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\副本口袋妖怪(黑白)1-649全PM资料Excel版.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -119,7 +119,7 @@
 
                         <Grid Grid.Row="5" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"  Background="Aqua">
                             <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Left" Margin="25,1,0,1">
-                                <TextBox Background="{x:Null}" BorderThickness="0" IsReadOnly="True">Speed</TextBox>
+                                <TextBox Background="{x:Null}" BorderThickness="0" IsReadOnly="True" HorizontalAlignment="Center">Speed</TextBox>
                             </Border>
                             <TextBlock HorizontalAlignment="Center" FontSize="15">:</TextBlock>
                             <Border CornerRadius="5" Width="50" Height="20" BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Right" Margin="0,1,25,1">

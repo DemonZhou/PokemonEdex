@@ -13,7 +13,7 @@ namespace PokemonEdex
     /// </summary>
     public partial class MainWindow : Window
     {
-        string url;
+        string url = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         
         public void Refresh()
         {
@@ -38,12 +38,9 @@ namespace PokemonEdex
             url = exeurl.Substring(0, debugurl.LastIndexOf('\\'));
             if (!System.IO.Directory.Exists(url + @"\Picture"))
             {
-                System.IO.Directory.CreateDirectory(url+ @"\Picture");
+                System.IO.Directory.CreateDirectory(url + @"\Picture");
             }
-            if (!System.IO.Directory.Exists(url+@"\Excel"))
-            {
-                System.IO.Directory.CreateDirectory(url+@"\Excel");
-            }
+            
             
             
         }
@@ -53,7 +50,7 @@ namespace PokemonEdex
         {
             Microsoft.Win32.OpenFileDialog filedialog = new Microsoft.Win32.OpenFileDialog();
             filedialog.Filter = "Excel文件| *.xlsx;*.xls";
-            filedialog.InitialDirectory = url + @"\Excel";
+            filedialog.InitialDirectory = url ;
             filedialog.ShowDialog();
             string filename = filedialog.FileName;
             if(filename != String.Empty)

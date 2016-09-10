@@ -42,9 +42,7 @@ namespace ExcelClass
         {
 
             Excel.Range ran = null;
-            string dicurl = filename.Substring(0, filename.LastIndexOf('\\'));
-            string baseurl = dicurl.Substring(0, dicurl.LastIndexOf('\\'));
-            string url = baseurl + @"\Picture";
+            string url = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Picture";
             int rowscount = exws.UsedRange.Rows.Count;
             int colscount = exws.UsedRange.Columns.Count;
             string id = String.Empty;

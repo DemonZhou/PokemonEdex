@@ -190,9 +190,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Picture\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="ultra_ball_128px_1203130_easyicon.net.ico" />
   </ItemGroup>
